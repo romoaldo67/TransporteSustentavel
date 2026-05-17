@@ -18,7 +18,7 @@ import model.*;
  * ║  • Passagem      - Gerencia passagens e cálculos de pontos/descontos      ║
  * ║  • Resgate       - Processa transações de resgate de passagens            ║
  * ║                                                                           ║
- * ║  Projeto Acadêmico - Programação Orientada a Objetos                      ║
+ * ║                                                                           ║
  * ╚═══════════════════════════════════════════════════════════════════════════╝
  */
 public class Main {
@@ -35,7 +35,7 @@ public class Main {
         System.out.println("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n");
 
 
-        Usuario usuario1 = new Usuario(1, "e", "",
+        Usuario usuario1 = new Usuario(1, "Bruno Pires", "",
                 "123.456.789-00", "12/05/2026");
         System.out.println("Usuário criado: " + usuario1);
 
@@ -107,9 +107,9 @@ public class Main {
 
 
         System.out.println("\n--- Cálculo de Descontos ---");
-        bicicletaEletrica.calcularDesconto(true);   // Sustentável → 10% desconto
+        bicicletaEletrica.calcularDesconto(true);   
         System.out.println();
-        aviao.calcularDesconto(false);               // Não sustentável → sem desconto
+        aviao.calcularDesconto(false);               
 
 
         System.out.println("\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
@@ -144,7 +144,7 @@ public class Main {
         System.out.println("  ETAPA 5: Resgate de Passagem (Fluxo Completo)");
         System.out.println("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n");
 
-        // Resgate da passagem sustentável (bicicleta elétrica)
+        
         System.out.println(">>> Resgate 1: Passagem sustentável (E-Bike)");
         System.out.println("    Saldo atual do cartão: " + cartao.getSaldoPontos() + " pts");
         System.out.println("    Pontos necessários:    " + pontosFinais1 + " pts\n");
@@ -152,7 +152,7 @@ public class Main {
         Resgate resgate1 = new Resgate(1, cartao, passagem1, "12/05/2026", pontosFinais1);
         resgate1.processarTransacao();
 
-        // Resgate da passagem de ônibus
+        
         System.out.println("\n>>> Resgate 2: Passagem convencional (Ônibus)");
         System.out.println("    Saldo atual do cartão: " + cartao.getSaldoPontos() + " pts");
         System.out.println("    Pontos necessários:    " + pontosFinais2 + " pts\n");
@@ -176,8 +176,8 @@ public class Main {
                 + " | Status: " + passagem2.getStatus());
 
         System.out.println("\n╔═══════════════════════════════════════════════════════════════╗");
-        System.out.println("║          SISTEMA FINALIZADO COM SUCESSO!                     ║");
-        System.out.println("║   Obrigado por escolher transportes sustentáveis! 🌿         ║");
-        System.out.println("╚═══════════════════════════════════════════════════════════════╝");
+        System.out.println("║          SISTEMA FINALIZADO COM SUCESSO!                        ║");
+        System.out.println("║   Obrigado por escolher transportes sustentáveis! 🌿           ║");
+        System.out.println("╚═════════════════════════════════════════════════════════════════╝");
     }
 }
