@@ -11,7 +11,7 @@ public class Passagem {
     private int valorEmPontos;
     private String status;
 
-    // Limiar de taxa de carbono para considerar transporte sustentável
+    
     private static final double LIMIAR_CARBONO_BAIXO = 0.05;
 
     public Passagem(int id, String origem, String destino, String dataViagem,
@@ -85,7 +85,7 @@ public class Passagem {
     public int calcularPontosNecessarios() {
         int pontosNecessarios = this.valorEmPontos;
 
-        // Se o transporte está associado, usa o valor de pontos do transporte como base
+        
         if (this.transporte != null) {
             pontosNecessarios = this.transporte.getValorPontos();
         }
@@ -102,7 +102,7 @@ public class Passagem {
         int pontosFinais = pontosBase;
 
         if (this.transporte != null && this.transporte.getTaxaCarbono() < LIMIAR_CARBONO_BAIXO) {
-            // Aplica 15% de desconto para transportes com baixa emissão de carbono
+            
             double desconto = pontosBase * 0.15;
             pontosFinais = (int) (pontosBase - desconto);
 
@@ -115,7 +115,7 @@ public class Passagem {
             System.out.println("  Valor mantido: " + pontosFinais + " pts");
         }
 
-        // Atualiza o valor em pontos da passagem
+        
         this.valorEmPontos = pontosFinais;
 
         return pontosFinais;
