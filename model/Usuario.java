@@ -67,7 +67,7 @@ public class Usuario {
             return false;
         }
 
-        // Expressão regular para validar o formato XXX.XXX.XXX-XX
+        
         String regex = "\\d{3}\\.\\d{3}\\.\\d{3}-\\d{2}";
         boolean valido = this.cpf.matches(regex);
 
