@@ -18,8 +18,6 @@ public class Resgate {
         this.pontosUtilizados = pontosUtilizados;
     }
 
-    // ==================== Getters e Setters ====================
-
     public int getId() {
         return id;
     }
@@ -92,23 +90,23 @@ public class Resgate {
     public void processarTransacao() {
         System.out.println("\n[TRANSAÇÃO] Processando resgate #" + this.id + "...");
 
-        // Primeiro valida se o resgate é possível
+        
         if (!validarResgate()) {
             System.out.println("[TRANSAÇÃO] Resgate CANCELADO por saldo insuficiente.");
             return;
         }
 
-        // Debita os pontos do cartão
+        
         int saldoAnterior = this.cartaoPontos.getSaldoPontos();
         int novoSaldo = saldoAnterior - this.pontosUtilizados;
         this.cartaoPontos.setSaldoPontos(novoSaldo);
 
-        // Atualiza o status da passagem para "Resgatada"
+        
         if (this.passagem != null) {
             this.passagem.setStatus("Resgatada");
         }
 
-        // Exibe confirmação da transação
+        
         System.out.println("\n╔══════════════════════════════════════════╗");
         System.out.println("  ║       RESGATE CONFIRMADO COM SUCESSO!    ║");
         System.out.println("  ╠══════════════════════════════════════════╣");
